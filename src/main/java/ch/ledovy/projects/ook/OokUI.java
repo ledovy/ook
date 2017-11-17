@@ -43,6 +43,6 @@ public class OokUI extends UI {
 	
 	@Override
 	protected void init(final VaadinRequest vaadinRequest) {
-		navigator.navigateToDefaultView();
+		this.navigator.navigateToDefaultView();
 	}
 }

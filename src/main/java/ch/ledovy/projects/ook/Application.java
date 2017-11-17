@@ -17,10 +17,10 @@ import ch.ledovy.projects.ook.model.BookRepository;
 import ch.ledovy.sewer.security.model.User;
 import ch.ledovy.sewer.security.model.UserRepository;
 
-@EnableJpaRepositories(basePackageClasses = { UserRepository.class, BookRepository.class }, enableDefaultTransactions = true)
-@EntityScan(basePackageClasses = { User.class, Book.class })
+@EnableJpaRepositories(basePackageClasses = {UserRepository.class, BookRepository.class}, enableDefaultTransactions = true)
+@EntityScan(basePackageClasses = {User.class, Book.class})
 @EnableEventBus
-@SpringBootApplication(scanBasePackages = { "ch.ledovy.sewer", "ch.ledovy.projects.ook" })
+@SpringBootApplication(scanBasePackages = {"ch.ledovy.sewer", "ch.ledovy.projects.ook"})
 public class Application extends SpringBootServletInitializer {
 	
 	public static void main(final String[] args) {

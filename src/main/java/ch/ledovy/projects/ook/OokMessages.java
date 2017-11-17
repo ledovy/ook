@@ -35,12 +35,12 @@ public class OokMessages extends ComponentMessages {
 	
 	@PreDestroy
 	public void shutdown() {
-		eventBus.unsubscribe(this);
+		this.eventBus.unsubscribe(this);
 	}
 	
 	@Override
 	protected MessageSource getSource() {
-		return source;
+		return this.source;
 	}
 	
 }

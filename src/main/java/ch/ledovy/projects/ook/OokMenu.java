@@ -20,26 +20,24 @@ import ch.ledovy.sewer.security.view.LogoutView;
 public class OokMenu implements Menu {
 	private static final String MENU_HOME = "main.menu.home";
 	
-	private final List<String> menus = Arrays.asList(MENU_HOME);
+	private final List<String> menus = Arrays.asList(OokMenu.MENU_HOME);
 	private final Map<String, List<MenuEntry>> menuEntries = new ConcurrentHashMap<>();
 	
 	public OokMenu() {
-		menuEntries.put(MENU_HOME, Arrays.asList(
-				new MenuEntry(MENU_HOME + ".books", VaadinIcons.BOOK, BooksView.class),
-				new MenuEntry(MENU_HOME + ".author", VaadinIcons.BOOK, AuthorView.class),
-				new MenuEntry(MENU_HOME + ".place", VaadinIcons.BOOK, PlaceView.class),
-				new MenuEntry(MENU_HOME + ".logout", VaadinIcons.SIGN_OUT, LogoutView.class)));
+		this.menuEntries.put(OokMenu.MENU_HOME,
+				Arrays.asList(new MenuEntry(OokMenu.MENU_HOME + ".books", VaadinIcons.BOOK, BooksView.class), new MenuEntry(OokMenu.MENU_HOME + ".author", VaadinIcons.BOOK, AuthorView.class),
+						new MenuEntry(OokMenu.MENU_HOME + ".place", VaadinIcons.BOOK, PlaceView.class), new MenuEntry(OokMenu.MENU_HOME + ".logout", VaadinIcons.SIGN_OUT, LogoutView.class)));
 	}
 	
 	@Override
 	public List<String> getMenus() {
-		return menus;
+		return this.menus;
 	}
 	
 	@Override
 	public List<MenuEntry> getMenuEntries(final String menu) {
-		if (menuEntries.containsKey(menu)) {
-			return menuEntries.get(menu);
+		if (this.menuEntries.containsKey(menu)) {
+			return this.menuEntries.get(menu);
 		} else {
 			return Collections.emptyList();
 		}
